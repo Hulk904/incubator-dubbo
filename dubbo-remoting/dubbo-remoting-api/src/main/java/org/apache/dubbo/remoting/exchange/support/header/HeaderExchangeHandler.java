@@ -95,7 +95,7 @@ public class HeaderExchangeHandler implements ChannelHandlerDelegate {
         // find handler by message class.
         Object msg = req.getData();
         try {
-            // handle data.
+            // handle data.  即将开始真实的业务处理
             CompletableFuture<Object> future = handler.reply(channel, msg);
             if (future.isDone()) {
                 res.setStatus(Response.OK);

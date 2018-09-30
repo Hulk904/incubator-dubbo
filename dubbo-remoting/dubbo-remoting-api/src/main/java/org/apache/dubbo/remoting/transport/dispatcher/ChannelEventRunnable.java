@@ -51,7 +51,7 @@ public class ChannelEventRunnable implements Runnable {
     }
 
     @Override
-    public void run() {
+    public void run() {//业务逻辑处理 最开始入口 ，这里request已经反序列化好了
         if (state == ChannelState.RECEIVED) {
             try {
                 handler.received(channel, message);
